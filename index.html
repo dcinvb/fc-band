@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FC Band Calendar - Stay updated with all band events, rehearsals, and performances.">
+    <meta name="keywords" content="FC Band, Band Calendar, Band Events, Rehearsals, Performances">
+    <meta name="author" content="Your Name or Organization">
+    <title>FC Band Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+        .calendar-container {
+            margin: 20px auto;
+            max-width: 800px;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        iframe {
+            border: solid 1px #777;
+            width: 100%;
+            height: 600px;
+            background-color: #fff; /* Ensures the iframe background is white in light mode */
+            transition: background-color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+        body.dark-mode iframe {
+            background-color: #333; /* Darkens the iframe background in dark mode */
+        }
+
+        /* Toggle Button */
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .toggle-button {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Responsive Design for Tablets */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            iframe {
+                height: 500px;
+            }
+        }
+
+        /* Responsive Design for Mobile Devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-button" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+    <h1>FC Band Calendar</h1>
+    <div class="calendar-container">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&title=FC%20Band%20Calendar&showTitle=0&src=a3BrMW9qdmx1dHYxYWk0OG1oM21xY2Q5anQwM2Q2bjJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23AD1457" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+
+            // Update button text
+            const button = document.querySelector(".toggle-button");
+            if (body.classList.contains("dark-mode")) {
+                button.textContent = "Switch to Light Mode";
+            } else {
+                button.textContent = "Switch to Dark Mode";
+            }
+        }
+    </script>
+</body>
+</html>
