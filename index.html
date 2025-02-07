@@ -47,9 +47,7 @@
 
         /* Toggle Button */
         .toggle-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+            margin: 20px 0;
             padding: 10px 15px;
             background-color: #333;
             color: #fff;
@@ -57,6 +55,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-align: left;
+            display: inline-block;
         }
         body.dark-mode .toggle-button {
             background-color: #f4f4f4;
@@ -82,15 +82,20 @@
             iframe {
                 height: 400px;
             }
+            .toggle-button {
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="toggle-button" onclick="toggleDarkMode()">Switch to Dark Mode</button>
     <h1>FC Band Calendar</h1>
     <div class="calendar-container">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&title=FC%20Band%20Calendar&showTitle=0&src=a3BrMW9qdmx1dHYxYWk0OG1oM21xY2Q5anQwM2Q2bjJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23AD1457" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
     </div>
+    <button class="toggle-button" onclick="toggleDarkMode()">Switch to Dark Mode</button>
 
     <script>
         // Function to toggle dark mode
